@@ -5,3 +5,8 @@
 
 #include "exit.h"
 #include "help.h"
+#include "allocate_memory.h"
+#include "free_memory.h"
+
+ 
+

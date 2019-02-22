@@ -5,7 +5,7 @@ char command[100];
 
 int main()
 {
-       memset(command,0,10);  // Used to allocate a block of memory of 10 bytes
+       memset(command,0,100);  // Used to allocate a block of memory of 10 bytes
 
        printf("Welcome to Interactive Memory command line utility\n");
 	

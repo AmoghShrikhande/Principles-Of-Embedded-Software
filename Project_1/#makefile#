@@ -1,10 +1,10 @@
-#makefile#
+ #makefile#
 
 CC = gcc
 
 CFLAGS = -Wall
 
-source := main.c exit.c help.c
+source := main.c exit.c help.c allocate_memory.c free_memory.
 
 OBJ := $(source:.c=.o)
 
