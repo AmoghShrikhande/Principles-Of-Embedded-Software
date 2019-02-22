@@ -6,8 +6,10 @@ char command[100];
 int main()
 {
        memset(command,0,100);  // Used to allocate a block of memory of 10 bytes
+extern int memory_allocation_flag;
 
        printf("Welcome to Interactive Memory command line utility\n");
+memory_allocation_flag = 1;
 	
 	while(1)
 	{
@@ -16,6 +18,7 @@ int main()
 		printf("\n 1. help");
 		printf("\n 2. exit\n");
                 printf("-->");
+
                      
                 //scanf("%[^\n]%c",command);
                 scanf("%s",command);

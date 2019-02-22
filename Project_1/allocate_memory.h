@@ -6,3 +6,4 @@
 #include<string.h>
 
 void memory_allocate (int, int);
+//extern int memory_allocation_flag; 
