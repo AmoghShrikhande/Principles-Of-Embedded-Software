@@ -10,7 +10,8 @@ int memory_allocation_flag;
  
     void memory_allocate (int a, int b)
       { 
-                uint32_t no_of_bytes;
+                //uint32_t no_of_bytes;
+ extern uint32_t no_of_bytes;
                 extern int *memory_start;
 //int memory_allocation_flag;
                // memory_allocation_flag = 0;

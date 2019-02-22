@@ -1,6 +1,8 @@
 #include "help.h"
 #include "allocate_memory.h"
 #include "free_memory.h"
+#include "Allocated_memory_display.h"
+#include "Write_memory_words.h"
 void help_func(void)
 {
         uint32_t ch;
@@ -16,6 +18,7 @@ void help_func(void)
         printf("\n 5 --> Write pattern");
         
         printf("\n 6 --> Verify pattern\n");
+        printf("\n 7 --> allocated_memory_display\n");
         for(i=0;i<=90;i++)               // To display organised GUI
          {
           printf("*");
@@ -31,14 +34,7 @@ void help_func(void)
          
 
 
-         
-
-          void Write_memory_words(int a, int b)
-          {
-                printf("\n Oops! This function is currently unavailable to the user\n");
-          }
-
-          void Display_memory_words (int a, int b)
+            void Display_memory_words (int a, int b)
           {
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
@@ -58,10 +54,10 @@ void help_func(void)
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
 
-if (ch>=0 && ch<=6) // if user enters letter code breaks
+if (ch>=0 && ch<=7) // if user enters letter code breaks
 {
  
-          void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_memory_words, Invert_Block, Write_pattern, Verify_pattern}; 
+          void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_memory_words, Invert_Block, Write_pattern, Verify_pattern, allocated_memory_display}; 
 
            (*fun_ptr_arr[ch])(a, b); 
 }
@@ -72,25 +68,4 @@ else
      help_func();
 }
         
-
-        /*switch(a){
-                   case 0: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 1: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 2: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 3: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 4: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 5: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   case 6: printf("\n Oops! This function is currently unavailable to the user\n");
-                           break;
-                   default:printf("\n Please enter a valid number as per the menu !\n");
-                          help_func();*/
-          
- 
-	
 }

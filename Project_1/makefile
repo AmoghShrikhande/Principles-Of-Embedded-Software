@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall
 
-source := main.c exit.c help.c allocate_memory.c free_memory.c
+source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c
 
 OBJ := $(source:.c=.o)
 
