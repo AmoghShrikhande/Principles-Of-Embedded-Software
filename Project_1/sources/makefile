@@ -2,11 +2,12 @@
 
 CC = gcc
 
-CFLAGS = -Wall
+CFLAGS = -Wall\
+	 -Werror
 
 
 
-source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c Display_particular_address.c
+source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c Display_particular_address.c Write_particular_offset.c Invert_memory_block.c
 
 vpath %.h ../includes/
 
