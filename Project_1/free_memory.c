@@ -12,7 +12,7 @@ void free_memory (int a, int b)
 {
 
 
-     if( memory_start != NULL )
+     if( memory_start != NULL && memory_allocation_flag == 0)
 {
      memory_allocation_flag = 1;
      free (memory_start);    

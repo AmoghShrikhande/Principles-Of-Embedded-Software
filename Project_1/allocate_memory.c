@@ -21,6 +21,9 @@ if(memory_allocation_flag == 1)
                 
                 printf("--> ");
                 scanf("%d",&no_of_bytes);
+                
+if(no_of_bytes>0)
+{
               
                memory_start = (int*)malloc(no_of_bytes*sizeof(int));
                if ( memory_start == NULL )
@@ -32,6 +35,13 @@ if(memory_allocation_flag == 1)
                   printf("\n Success ! %d words of memory allocated successfully \n", no_of_bytes);
                 }
 memory_allocation_flag = 0;
+}
+
+else
+{
+  printf("\nPlease enter the value between 1 and max memory limit\n");
+}
+
 }
 else
 {

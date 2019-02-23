@@ -16,8 +16,7 @@ void help_func(void)
         printf("\n 3 --> Display memory words");   
         printf("\n 4 --> Invert Block"); 
         printf("\n 5 --> Write pattern");
-        
-        printf("\n 6 --> Verify pattern\n");
+        printf("\n 6 --> Verify pattern");
         printf("\n 7 --> allocated_memory_display\n");
         for(i=0;i<=90;i++)               // To display organised GUI
          {
