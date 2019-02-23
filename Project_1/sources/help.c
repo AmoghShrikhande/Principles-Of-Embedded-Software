@@ -1,3 +1,9 @@
+/*File Name & Description : help.c This file allows the user to browse through the possible commands in the application
+ File Author Name : Amogh.S & Srinath.S
+ Tools used to process the code: (GCC: compiler, ld: GNU linker, GNU: debugger)
+ Identification of any leveraged code: No leveraged code
+ Applicable Links: None */
+
 #include "../includes/help.h"
 #include "../includes/allocate_memory.h"
 #include "../includes/free_memory.h"
@@ -7,9 +13,29 @@
 #include "../includes/Display_particular_address.h"
 #include "../includes/Write_particular_offset.h"
 #include "../includes/Invert_memory_block.h"
+
+
+
+/*******************************************************************************
+* Function Name: help_func
+********************************************************************************
+*
+* Summary:
+*  This function is used to display the possible commands which the user can make use of
+*
+* Parameters:
+*  none
+*
+* Return:
+*  None.
+*
+* Reference: Self
+*
+*******************************************************************************/ 
+
 void help_func(void)
 {
-        int ch;
+        int ch=0;
         uint32_t a=0,b=0;
         int i;
  	printf("\n ***************************************** HELP **************************************** ");
@@ -55,21 +81,19 @@ void help_func(void)
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
 
-if ((ch>=0) && (ch<=8)) // if user enters letter code breaks
+if ((ch>=0) && (ch<=8)) // use function pointers and look up table to invoke various functions
 {
  
           void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_particular_address, Invert_Block, Write_pattern, Verify_pattern, Write_particular_offset,  allocated_memory_display, Exit_the_utility }; 
 
-           (*fun_ptr_arr[ch])(a, b); 
+           (*fun_ptr_arr[ch])(a, b);  // invoke the required functions
 }
 
 else
 {
      printf("\n Please enter a valid number as per the menu !\n");
-     //free(ch);
      help_func();
-      //goto autox;
-     
+      
 }
         
 }
