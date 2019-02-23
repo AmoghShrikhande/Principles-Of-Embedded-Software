@@ -9,10 +9,10 @@
 #include "../includes/Invert_memory_block.h"
 void help_func(void)
 {
-        uint32_t ch;
+        int ch;
         uint32_t a=0,b=0;
         int i;
-	printf("\n ***************************************** HELP **************************************** ");
+ 	printf("\n ***************************************** HELP **************************************** ");
         printf("\n Please enter the number corresponding to the functionality that you want to implement:");
         printf("\n 0 --> Allocate memory"); 
         printf("\n 1 --> Free memory"); 
@@ -31,7 +31,7 @@ void help_func(void)
          } 
         
         printf("\n ---> "); 
-        scanf("%d",&ch);
+        scanf(" %d",&ch);
         for(i=0;i<=90;i++)
          {
           printf("*");
@@ -40,17 +40,10 @@ void help_func(void)
 
 
 
-void Exit_the_utility (int a, int b)
+          void Exit_the_utility (int a, int b)
           {
                 exit(0);
           }
-
-
-
-          /*void Invert_Block (int a, int b)
-          {
-                printf("\n Oops! This function is currently unavailable to the user\n");
-          }*/
 
           void Write_pattern (int a, int b)
           {
@@ -62,7 +55,7 @@ void Exit_the_utility (int a, int b)
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
 
-if (ch>=0 && ch<=8) // if user enters letter code breaks
+if ((ch>=0) && (ch<=8)) // if user enters letter code breaks
 {
  
           void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_particular_address, Invert_Block, Write_pattern, Verify_pattern, Write_particular_offset,  allocated_memory_display, Exit_the_utility }; 
@@ -73,7 +66,10 @@ if (ch>=0 && ch<=8) // if user enters letter code breaks
 else
 {
      printf("\n Please enter a valid number as per the menu !\n");
+     //free(ch);
      help_func();
+      //goto autox;
+     
 }
         
 }

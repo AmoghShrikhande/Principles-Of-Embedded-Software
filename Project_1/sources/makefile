@@ -16,6 +16,10 @@ OBJ := $(source:.c=.o)
 mem_util: $(OBJ)
 	$(CC) -o mem_util $(OBJ) $(CFLAGS)
 
+test: mem_util testfile
+	./mem_util < testfile
+
+
 clean:
 	rm -f *.o mem_util
 

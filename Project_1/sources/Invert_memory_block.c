@@ -11,6 +11,7 @@ int user_write_value_invert;
 int *temporary_address_invert;
 int no_of_bytes;
 int user_entered_offset_address_invert;
+clock_t time_stamp;
 
 
 void Invert_Block (int a , int b)
@@ -49,7 +50,12 @@ void Invert_Block (int a , int b)
 
     	if(user_write_value_invert ==1)
       {
+        time_stamp = clock();
   	    *(user_entered_address_invert) = ~(*(user_entered_address_invert));
+        time_stamp = clock()-time_stamp;
+        double time_clk = ((double)(time_stamp))/CLOCKS_PER_SEC;
+
+        printf("\n time: %f",time_clk);
       }
       else
         {
@@ -80,7 +86,11 @@ void Invert_Block (int a , int b)
         scanf("%d", &user_entered_offset_address_invert);
         if((user_entered_offset_address_invert>= 0) && (user_entered_offset_address_invert<no_of_bytes))
           {
+            time_stamp = clock();
             *(memory_start+user_entered_offset_address_invert) = ~(*(memory_start+user_entered_offset_address_invert));
+            time_stamp = clock()-time_stamp;
+            double time_clk = ((double)(time_stamp))/CLOCKS_PER_SEC;
+            printf("\n time: %f",time_clk);
           }
       }
     }
