@@ -1,7 +1,7 @@
 // Memory_alocate
 
 #include <malloc.h> 
-#include "allocate_memory.h"
+#include "../includes/allocate_memory.h"
 int memory_allocation_flag;
 
 

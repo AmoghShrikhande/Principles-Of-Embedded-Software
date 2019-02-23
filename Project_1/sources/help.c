@@ -1,9 +1,9 @@
-#include "help.h"
-#include "allocate_memory.h"
-#include "free_memory.h"
-#include "Allocated_memory_display.h"
-#include "Write_memory_words.h"
-#include "exit.h"
+#include "../includes/help.h"
+#include "../includes/allocate_memory.h"
+#include "../includes/free_memory.h"
+#include "../includes/Allocated_memory_display.h"
+#include "../includes/Write_memory_words.h"
+#include "../includes/exit.h"
 void help_func(void)
 {
         uint32_t ch;

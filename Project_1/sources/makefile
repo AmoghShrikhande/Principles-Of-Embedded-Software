@@ -4,7 +4,11 @@ CC = gcc
 
 CFLAGS = -Wall
 
-source := main.c exit.c help.c allocate_memory.c free_memory.
+
+
+source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c
+
+vpath %.h ../includes/
 
 OBJ := $(source:.c=.o)
 
@@ -14,3 +18,4 @@ mem_util: $(OBJ)
 clean:
 	rm -f *.o mem_util
 
+	

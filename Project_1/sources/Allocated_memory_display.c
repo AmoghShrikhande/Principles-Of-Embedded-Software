@@ -1,6 +1,6 @@
 /*Allocated_memory_display*/
 
-#include "Allocated_memory_display.h"
+#include "../includes/Allocated_memory_display.h"
 
 extern uint32_t no_of_bytes;
 int *memory_start;
