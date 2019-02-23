@@ -3,6 +3,7 @@
 #include "free_memory.h"
 #include "Allocated_memory_display.h"
 #include "Write_memory_words.h"
+#include "exit.h"
 void help_func(void)
 {
         uint32_t ch;
@@ -18,6 +19,8 @@ void help_func(void)
         printf("\n 5 --> Write pattern");
         printf("\n 6 --> Verify pattern");
         printf("\n 7 --> allocated_memory_display\n");
+        printf("\n 8 --> Exit the Utility\n");
+
         for(i=0;i<=90;i++)               // To display organised GUI
          {
           printf("*");
@@ -29,12 +32,18 @@ void help_func(void)
          {
           printf("*");
          } 
+        printf("\n");
 
-         
 
 
-            void Display_memory_words (int a, int b)
+void Exit_the_utility (int a, int b)
           {
+                exit(0);
+          }
+
+void Display_memory_words (int a, int b)
+
+ {
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
 
@@ -53,10 +62,10 @@ void help_func(void)
                 printf("\n Oops! This function is currently unavailable to the user\n");
           }
 
-if (ch>=0 && ch<=7) // if user enters letter code breaks
+if (ch>=0 && ch<=8) // if user enters letter code breaks
 {
  
-          void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_memory_words, Invert_Block, Write_pattern, Verify_pattern, allocated_memory_display}; 
+          void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_memory_words, Invert_Block, Write_pattern, Verify_pattern, allocated_memory_display, Exit_the_utility }; 
 
            (*fun_ptr_arr[ch])(a, b); 
 }
