@@ -6,7 +6,7 @@ CFLAGS = -Wall
 
 
 
-source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c
+source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c Display_particular_address.c
 
 vpath %.h ../includes/
 

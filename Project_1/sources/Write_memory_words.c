@@ -3,13 +3,13 @@
 #include "../includes/Write_memory_words.h"
 
 
-int user_write_value = 0;
+int user_write_value ;
 unsigned int user_entered_data;
 uint32_t no_of_bytes;
 int *memory_start;
 int j;
-int *user_entered_address;
-int *temporary_address;
+int *user_entered_address;//added now
+int *temporary_address;//added now
 int memory_allocation_flag;
 
 uint32_t no_of_bytes;

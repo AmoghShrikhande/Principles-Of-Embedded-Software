@@ -1,10 +1,9 @@
-#include "../includes/help.h"
-#include "../includes/allocate_memory.h"
-#include "../includes/free_memory.h"
-#include "../includes/Allocated_memory_display.h"
-#include "../includes/Write_memory_words.h"
-#include "../includes/exit.h"
-#include "../includes/Display_particular_address.h"
+#include "help.h"
+#include "allocate_memory.h"
+#include "free_memory.h"
+#include "Allocated_memory_display.h"
+#include "Write_memory_words.h"
+#include "exit.h"
 void help_func(void)
 {
         uint32_t ch;
@@ -15,7 +14,7 @@ void help_func(void)
         printf("\n 0 --> Allocate memory"); 
         printf("\n 1 --> Free memory"); 
         printf("\n 2 --> Write memory words"); 
-        printf("\n 3 --> Display particular address");   
+        printf("\n 3 --> Display memory words");   
         printf("\n 4 --> Invert Block"); 
         printf("\n 5 --> Write pattern");
         printf("\n 6 --> Verify pattern");
@@ -26,7 +25,7 @@ void help_func(void)
          {
           printf("*");
          } 
-        
+        printf("\n");
         printf("\n ---> "); 
         scanf("%d",&ch);
         for(i=0;i<=90;i++)
@@ -42,7 +41,11 @@ void Exit_the_utility (int a, int b)
                 exit(0);
           }
 
+void Display_particular_address (int a, int b)
 
+ {
+                printf("\n Oops! This function is currently unavailable to the user\n");
+          }
 
           void Invert_Block (int a, int b)
           {
