@@ -30,15 +30,15 @@ int *memory_start;
 *******************************************************************************/
 
 void free_memory (int a, int b)
- {
-   if( memory_start != NULL && memory_allocation_flag == 0)     // free the memory only if there is some memory allocated for the application
-     {
-       memory_allocation_flag = 1;                              // indicate that the allocated memory is now freed
-       free (memory_start);    
-       printf("\n The allocated memory is now freed \n");   
-     }
-   else 
-     {
-       printf("\n You need to allocate memory before freeing it \n");
-     }
- }
+{
+  if( memory_start != NULL && memory_allocation_flag == 0)     // free the memory only if there is some memory allocated for the application
+  {
+    memory_allocation_flag = 1;                              // indicate that the allocated memory is now freed
+    free (memory_start);    
+    printf("\n The allocated memory is now freed \n");   
+  }
+  else 
+  {
+    printf("\n You need to allocate memory before freeing it \n");
+  }
+}

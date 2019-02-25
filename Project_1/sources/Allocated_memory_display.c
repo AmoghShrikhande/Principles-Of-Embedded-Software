@@ -34,18 +34,18 @@ int memory_allocation_flag;
 
 
 void allocated_memory_display (int a, int b)
+{
+  if (memory_allocation_flag == 0)                            //  if memory is allocated then only display the address and the data
   {
-     if (memory_allocation_flag == 0)                            //  if memory is allocated then only display the address and the data
-       {
-          for (j=1; j<= no_of_bytes; j++)
-            {
-              printf ("\n The address of word %d\t: %p ", j, (memory_start-1 +j));  // display all the allocated addresses and the corresponding data at evry addresses
-              printf ("Data: 0x%x " , *(memory_start-1 +j));
-            }
-       }
-     else
-       {
-           printf(" \n There is no allocated memory to display \n" );
-       }
+    for (j=1; j<= no_of_bytes; j++)
+    {
+      printf ("\n The address of word %d\t: %p ", j, (memory_start-1 +j));  // display all the allocated addresses and the corresponding data at evry addresses
+      printf ("Data: 0x%x " , *(memory_start-1 +j));
+    }
   }
+  else
+  {
+    printf(" \n There is no allocated memory to display \n" );
+  }
+}
 

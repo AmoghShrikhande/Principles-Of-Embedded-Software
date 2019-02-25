@@ -40,16 +40,13 @@ clock_t time_stamp;
 
 
 void Invert_Block (int a , int b)
-
 {
   printf("\nPlease enter the address of the block whose memory has to be inverted Or Enter the offset address whose memory has to be inverted ");
   printf("\nPress '1' to give the address directly, '2' to give the offset\n");
   scanf("%d",&users_choice);
 
   if( users_choice>0 && users_choice<3 )
-
   {
-
     if(users_choice ==1)          // The address is directly given as address
     {
       if (memory_allocation_flag == 0)
@@ -84,19 +81,18 @@ void Invert_Block (int a , int b)
       }
       else
         {
-            printf("\n Enter appropriate address\n");
+          printf("\n Enter appropriate address\n");
         }
       } 
 
       else 
         {
-            printf("\n Please allocate the memory before inverting the data\n");
+          printf("\n Please allocate the memory before inverting the data\n");
         } 
     }
 
 
     if(users_choice ==2)   // enter the address via offset
-
     {
       if (memory_allocation_flag == 0)
       {
@@ -110,18 +106,17 @@ void Invert_Block (int a , int b)
         printf("\n Please enter the offset of the address location, whose data you have to invert\n");
         scanf("%d", &user_entered_offset_address_invert);
         if((user_entered_offset_address_invert>= 0) && (user_entered_offset_address_invert<no_of_bytes))
-          {
-            time_stamp = clock();
-            *(memory_start+user_entered_offset_address_invert) = ~(*(memory_start+user_entered_offset_address_invert)); // logic to invert the data
-            time_stamp = clock()-time_stamp;
-            double time_clk = ((double)(time_stamp))/CLOCKS_PER_SEC;
-            printf("\n time: %f",time_clk);
-          }
+        {
+          time_stamp = clock();
+          *(memory_start+user_entered_offset_address_invert) = ~(*(memory_start+user_entered_offset_address_invert)); // logic to invert the data
+          time_stamp = clock()-time_stamp;
+          double time_clk = ((double)(time_stamp))/CLOCKS_PER_SEC;
+          printf("\n time: %f",time_clk);
+        }
       }
     }
 
   }
-
 
   else
   {
