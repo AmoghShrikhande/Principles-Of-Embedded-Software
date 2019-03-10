@@ -13,6 +13,9 @@
 #include "../includes/Display_particular_address.h"
 #include "../includes/Write_particular_offset.h"
 #include "../includes/Invert_memory_block.h"
+#include "../includes/Write_pattern.h"
+#include "../includes/Verify_pattern.h"
+
 
 
 
@@ -40,16 +43,18 @@ void help_func(void)
   int i;
  	printf("\n ***************************************** HELP **************************************** ");
   printf("\n Please enter the number corresponding to the functionality that you want to implement:");
-  printf("\n 0 --> Allocate memory"); 
-  printf("\n 1 --> Free memory"); 
-  printf("\n 2 --> Write memory words"); 
-  printf("\n 3 --> Display particular address");   
-  printf("\n 4 --> Invert Block"); 
-  printf("\n 5 --> Write pattern");
-  printf("\n 6 --> Verify pattern");
-  printf("\n 7 --> Write_particular_offset");
-  printf("\n 8 --> allocated_memory_display\n");
-  printf("\n 9 --> Exit the Utility\n");
+  printf("\n 0  --> Allocate memory"); 
+  printf("\n 1  --> Free memory"); 
+  printf("\n 2  --> Write memory words"); 
+  printf("\n 3  --> Display particular address");   
+  printf("\n 4  --> Invert Block"); 
+  printf("\n 5  --> Write pattern");
+  printf("\n 6  --> Verify pattern");
+  printf("\n 7  --> Write_particular_offset");
+  printf("\n 8  --> allocated_memory_display");
+  printf("\n 9  --> Write_pattern");
+  printf("\n 10 --> Verify_pattern");
+  printf("\n 11 --> Exit the Utility\n");
 
   for(i=0;i<=90;i++)               // To display organised GUI
   {
@@ -71,7 +76,7 @@ void help_func(void)
     exit(0);
   }
 
-  void Write_pattern (int a, int b)
+/*  void Write_pattern (int a, int b)
   {
     printf("\n Oops! This function is currently unavailable to the user\n");
   }
@@ -80,11 +85,12 @@ void help_func(void)
   {
     printf("\n Oops! This function is currently unavailable to the user\n");
   }
+*/
 
-  if ((ch>=0) && (ch<=8)) // use function pointers and look up table to invoke various functions
+  if ((ch>=0) && (ch<=10)) // use function pointers and look up table to invoke various functions
   {
 
-    void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_particular_address, Invert_Block, Write_pattern, Verify_pattern, Write_particular_offset,  allocated_memory_display, Exit_the_utility }; 
+    void (*fun_ptr_arr[])(int, int) = {memory_allocate, free_memory, Write_memory_words, Display_particular_address, Invert_Block, Write_pattern, Verify_pattern, Write_particular_offset,  allocated_memory_display,Write_pattern,Verify_pattern, Exit_the_utility }; 
 
     (*fun_ptr_arr[ch])(a, b);  // invoke the required functions
   }

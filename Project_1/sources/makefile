@@ -1,13 +1,11 @@
- #makefile#
+#makefile#
 
 CC = gcc
 
 CFLAGS = -Wall\
 	 -Werror
 
-
-
-source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c Display_particular_address.c Write_particular_offset.c Invert_memory_block.c
+source := main.c exit.c help.c allocate_memory.c free_memory.c Allocated_memory_display.c Write_memory_words.c Display_particular_address.c Write_particular_offset.c Invert_memory_block.c Write_pattern.c Verify_pattern.c
 
 vpath %.h ../includes/
 

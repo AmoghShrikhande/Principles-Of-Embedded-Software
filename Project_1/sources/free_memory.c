@@ -9,6 +9,8 @@
 
 int memory_allocation_flag;
 int *memory_start;
+int j;
+int no_of_bytes;
 
 /*******************************************************************************
 * Function Name: free_memory 
@@ -34,6 +36,12 @@ void free_memory (int a, int b)
   if( memory_start != NULL && memory_allocation_flag == 0)     // free the memory only if there is some memory allocated for the application
   {
     memory_allocation_flag = 1;                              // indicate that the allocated memory is now freed
+    for (j=1; j<= no_of_bytes; j++)
+    {
+       *(memory_start-1 +j) = 0;
+   
+    }
+
     free (memory_start);    
     printf("\n The allocated memory is now freed \n");   
   }
