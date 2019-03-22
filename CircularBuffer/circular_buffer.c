@@ -1,3 +1,6 @@
+/*Name: Amogh Shrikhande
+Course: Principles of Embedded software*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "circular_buffer.h"
