@@ -65,7 +65,7 @@ void Verify_pattern(int a, int b)
                printf("%p ", (temp_write_pattern + i));
               
                printf("%x ",*(temp_write_pattern + i));
-              //*(trial) = ( ((uintptr_t)(temp_write_pattern + i)) ^ (seed_val_verify_pattern) ) ;
+              *(trial) = ( ((uintptr_t)(temp_write_pattern + i)) ^ (seed_val_verify_pattern) ) ;
                printf("\n The required value is %x\n", ((uint32_t)( ((uintptr_t)(temp_write_pattern + i)) ^ (seed_val_verify_pattern) ))); */
                
               if ((*(temp_write_pattern + i)) == ((uint32_t)(((uintptr_t)(temp_write_pattern + i)) ^ (seed_val_verify_pattern))))
