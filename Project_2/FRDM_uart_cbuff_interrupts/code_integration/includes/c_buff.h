@@ -6,26 +6,19 @@
 #ifndef C_BUFF_H
 #define C_BUFF_H
 
-/**********************
-******INCLUDES*********
-**********************/
-
+/***************************************************************************************
+*                          HEADERS & MACROS                                            *
+***************************************************************************************/
+#include "MKL25Z4.h"
 #include <stdlib.h>
 #include "stdarg.h"
 #include <stdio.h>
-#include "board.h"
-#include "peripherals.h"
-#include "pin_mux.h"
-#include "clock_config.h"
-#include "MKL25Z4.h"
-#include "fsl_debug_console.h"
 
+/***************************************************************************************
+*                          GLOBAL STRUCTURES                                           *
+***************************************************************************************/
 
-
-
-/*********************************
-*********GLOBAL STRUCTURE*********
-**********************************/
+/*Structure used to store different values for a circular buffer*/
 typedef struct circular_buffer
 {
     char* buffer_number;
@@ -37,23 +30,17 @@ typedef struct circular_buffer
     size_t deleted_items;
 }c_buf;
 
-//writ enum which has all return status for all functions
+/***************************************************************************************
+*                          GLOBAL VARIABLES                                            *
+***************************************************************************************/
+extern int character_entred_flag;
+extern uint8_t data_poll;
 
-
-
-
-
-/*********************************
-******FUCNTION PROTOTYPES*********
-**********************************/
+/***************************************************************************************
+*                          FUNCTION PROTOTYPES                                         *
+***************************************************************************************/
 void add_elements( c_buf* add_buff, char item);
-//int display_buffer (c_buf* display_buff);
 void delete_buffer (c_buf* delete_buff);
 void buffer_init();
-
-// ring_t *init( int length );
-// int insert( ring_t *ring, char data);
-// int remove_t(ring_t *ring, char *data);
-// int entries(ring_t *ring);
 
 #endif
