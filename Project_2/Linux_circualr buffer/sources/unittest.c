@@ -123,6 +123,61 @@ void test_suite2() //suite2
 
 }
 
+/*Conditions to test resize buffer*/
+void test_suite3() //suite3
+{	
+	c_buf *ring;
+	// srand(time(0));
+	// random_num=rand();
+	array_elements[0] = 5;
+
+	ring = buffer_init(2,array_elements);
+	CU_ASSERT_NOT_EQUAL(ring,NULL);
+	printf("\n Entered the test suite");
+
+	
+	CU_ASSERT_EQUAL(display_buffer(ring),SUCCESS);
+	
+	//CU_ASSERT_EQUAL(buffer_init(1,array_elements),SUCCESS);
+	//char c;
+	CU_ASSERT_EQUAL(buffer_resize(ring,10),SUCCESS);
+	CU_ASSERT_EQUAL(buffer_resize(ring+1,10),SUCCESS);
+
+
+	for(int i=0 ; i<10;i++ )
+	{
+		CU_ASSERT_EQUAL(add_elements(ring,'a'),SUCCESS);
+		CU_ASSERT_EQUAL(add_elements(ring+1,'z'),SUCCESS);
+	}
+	
+	CU_ASSERT_EQUAL(display_buffer(ring),SUCCESS);
+	CU_ASSERT_EQUAL(display_buffer(ring+1),SUCCESS);
+
+
+	for (int i=0 ; i<9;i++)
+	{
+		CU_ASSERT_EQUAL(delete_buffer(ring),SUCCESS);
+		CU_ASSERT_EQUAL(delete_buffer(ring+1),SUCCESS);
+
+	}
+
+	CU_ASSERT_EQUAL(display_buffer(ring),SUCCESS);
+	CU_ASSERT_EQUAL(display_buffer(ring+1),SUCCESS);
+
+	//CU_ASSERT_EQUAL(entries(ring),SUCCESS);
+	
+	
+
+	// for (int i=0 ; i<array_elements[0];i++)
+	// {
+	// 	CU_ASSERT_EQUAL(delete_buffer(ring),SUCCESS);
+	// }
+
+	// 	CU_ASSERT_EQUAL(delete_buffer(ring),BUFF_EMPTY);
+
+// 	CU_ASSERT_EQUAL(entries(ring),SUCCESS);
+
+}
 int register_test_suite(void)
 {
  return 0;
@@ -167,6 +222,22 @@ int main()
 	 return CU_get_error();
 	 }
 	 if ((CU_add_test(pSuite2, "test of Full buffer and empty buffer", test_suite2)) == NULL)
+	{
+	  CU_cleanup_registry();
+	   return CU_get_error();
+	}
+
+/**************************************************************************************************************************************/
+ 	/* add a suite to the registry */
+
+    CU_pSuite pSuite3 = NULL;
+  	pSuite3 = CU_add_suite("Suite_3", init_suite1, clean_suite1);
+	 if (NULL == pSuite3) 
+	 {
+	 CU_cleanup_registry();
+	 return CU_get_error();
+	 }
+	 if ((CU_add_test(pSuite3, "test of Full buffer and empty buffer", test_suite3)) == NULL)
 	{
 	  CU_cleanup_registry();
 	   return CU_get_error();
